@@ -24,25 +24,29 @@ melodiaSopranu =
   d4 cis2 |
   a2 e4 |
   fis4 e2 |
-  \break
-  \repeat volta 2 {
-    cis'2. |
-    d2 d4 |
-    cis2. |
-    d4 d2 |
-    cis2. |
-    d2 a4 |
-  }
-  \alternative {
-    {
-      b2 b'4 |
-      a8 a e e d d |
-    }
+  cis'2. |
+  d2 d4 |
+  cis2. |
+  d4 d2 |
+  cis2. |
+  d2 a4 |
+  <<
     {
       b4. b8 b b |
       fis'8. e16 e4 d |
     }
-  }
+    \new Voice = sopranPierwszy {
+      \voiceOne
+      \set fontSize = #-2
+      b2 b'4 |
+      a8 a e e d d |
+    }
+    \new Lyrics \with { alignAboveContext = sopran }
+    \lyricsto sopranPierwszy \lyricmode {
+      \set fontSize = #-2
+      za -- mie -- szka -- ło mię -- dzy na -- mi.
+    }
+  >>
   \bar "|."
 }
 
@@ -59,8 +63,6 @@ melodiaAltu =
     e8( fis g) g fis e |
     fis8( g a) a fis a |
   }
-  e8( fis g) g fis e |
-  fis8. e16 cis4 d |
   e8( fis g) g fis e |
   fis8. e16 cis4 d |
   \bar "|."
@@ -81,8 +83,6 @@ melodiaTenorow =
   }
   g4. e8 fis g |
   a8. cis,16 e4 d |
-  g4. e8 fis g |
-  a8. cis,16 e4 d |
   \bar "|."
 }
 
@@ -101,8 +101,6 @@ melodiaBasow =
   a8 a a4 d |
   g4. e8 cis a |
   d8 d d4 fis |
-  e4. e8 e e |
-  a,8. a16 cis4 d |
   e4. e8 e e |
   a,8. a16 cis4 d |
   \bar "|."
@@ -126,7 +124,6 @@ tekstSopranu = \lyricmode {
   O -- gień krze -- pnie, blask cie -- mnie -- je!
   Wzgar -- dzo -- ny o -- kry -- ty
   A Sło -- wo
-  za -- mie -- szka -- ło mię -- dzy na -- mi.
   za -- mie -- szka -- ło mię -- dzy na -- mi.
 }
 tekstAltu = \lyricmode {
@@ -175,6 +172,7 @@ zwrotkaV = \markup {
   %top-markup-spacing #'basic-distance = 8
   %markup-system-spacing #'basic-distance = 18
   %system-system-spacing #'basic-distance = 18
+  system-system-spacing #'padding = 1
   %score-markup-spacing #'basic-distance = 15
   ragged-last-bottom = ##f
 }
@@ -199,12 +197,12 @@ odstepOdNumeruDoZwrotki = \markup \hspace #1
       \set chordNameLowercaseMinor = ##t
       \akordy
     }
-    \new Staff = sopran
-    \with { \consists "Ambitus_engraver" } {
+    \new Staff = sopran {
       \clef treble
       \set Staff.instrumentName = "Sopran "
       \set Staff.shortInstrumentName = "S "
-      \new Voice = sopran {
+      \new Voice = sopran
+      \with { \consists "Ambitus_engraver" } {
         \set Staff.midiInstrument = "clarinet"
         \dynamicUp
         \tupletUp
