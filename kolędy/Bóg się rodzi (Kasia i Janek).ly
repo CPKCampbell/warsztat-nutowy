@@ -6,6 +6,7 @@
   poet = "słowa: Franciszek Karpiński (1741-1825)"
   composer = "opracowanie: Kasia Szymanek, Janek Warchoł"
 }
+
 %--------------------------------MELODIA
 metrumitp = {
   \key d \major
@@ -26,6 +27,7 @@ melodiaSopranu =
   fis4 e2 |
   cis'2. |
   d2 d4 |
+  \break
   cis2. |
   d4 d2 |
   cis2. |
@@ -151,33 +153,55 @@ tekstBasow = \lyricmode {
   \wzgardzony
 }
 
-zwrotkaII = \markup {
+zwrotkaII = \markup \column {
+  "Cóż masz niebo nad ziemiany? "
+  "Bóg porzucił szczęście twoje."
+  "Wszedł między lud ukochany,"
+  "Dzieląc z nim trudy i znoje."
+  "Niemało cierpiał, niemało,"
+  "Żeśmy byli winni sami."
+  "A Słowo (...)"
 }
-zwrotkaIII = \markup {
+zwrotkaIII = \markup \column {
+  "W nędznej szopie urodzony, "
+  "Żłób Mu za kolebkę dano."
+  "Cóż jest, czym był otoczony?"
+  "Bydło, pasterze i siano."
+  "Ubodzy, was to spotkało"
+  "Witać Go przed bogaczami!"
+  "A Słowo (...)"
 }
-zwrotkaIV = \markup {
+zwrotkaIV = \markup \column {
+  "Podnieś rękę, Boże Dziecię,"
+  "Błogosław Ojczyznę miłą!"
+  "W dobrych radach, w dobrym bycie"
+  "Wspieraj jej siłę Swą siłą."
+  "Dom nasz i majętność całą,"
+  "I wszystkie wioski z miastami."
+  "A Słowo (...)"
 }
 zwrotkaV = \markup {
 }
 
 %--------------------------------USTAWIENIA
 
-#(set-global-staff-size 17)
+#(set-global-staff-size 16.5)
 
 \paper {
-  indent = 12 \mm
+  indent = 2 \mm
+  system-count = 3
   short-indent = 2 \mm
   %left-margin = 15 \mm
   %right-margin = 15 \mm
-  %top-markup-spacing #'basic-distance = 8
-  %markup-system-spacing #'basic-distance = 18
-  %system-system-spacing #'basic-distance = 18
+  top-markup-spacing #'basic-distance = 8
+  markup-system-spacing #'basic-distance = 18
+  system-system-spacing #'basic-distance = 18
   system-system-spacing #'padding = 1
-  %score-markup-spacing #'basic-distance = 15
-  ragged-last-bottom = ##f
+  score-markup-spacing #'basic-distance = 15
+  %ragged-last-bottom = ##f
 }
 
-#(define powiekszenie-zwrotek '(1.2 . 1.2))
+#(define powiekszenie-zwrotek '(1.05 . 1.1))
 #(define interlinia '(baseline-skip . 3)) % 3 is Lily default
 odstepMiedzyZwrotkami = \markup \vspace #2
 odstepOdNumeruDoZwrotki = \markup \hspace #1
@@ -257,6 +281,44 @@ odstepOdNumeruDoZwrotki = \markup \hspace #1
   }
   \midi {
     \tempo 4=85
+  }
+}
+
+\markup {
+  \fill-line {
+    \scale #powiekszenie-zwrotek {
+      \null
+
+      \override #interlinia
+      \line {
+        \bold
+        "2."
+        \odstepOdNumeruDoZwrotki
+        \zwrotkaII
+      }
+
+      \null
+
+      \override #interlinia
+      \line {
+        \bold
+        "3."
+        \odstepOdNumeruDoZwrotki
+        \zwrotkaIII
+      }
+
+      \null
+
+      \override #interlinia
+      \line {
+        \bold
+        "4."
+        \odstepOdNumeruDoZwrotki
+        \zwrotkaIV
+      }
+
+      \null
+    }
   }
 }
 
