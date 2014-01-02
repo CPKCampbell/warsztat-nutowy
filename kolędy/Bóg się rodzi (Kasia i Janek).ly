@@ -124,7 +124,7 @@ tekstSopranu = \lyricmode {
   \set stanza = "1. "
   Bóg się ro -- dzi, moc  tru -- chle -- je!
   O -- gień krze -- pnie, blask cie -- mnie -- je!
-  Wzgar -- dzo -- ny o -- kry -- ty
+  Wzgar -- dzo -- ny śmier -- tel -- ny
   A Sło -- wo
   za -- mie -- szka -- ło mię -- dzy na -- mi.
 }
