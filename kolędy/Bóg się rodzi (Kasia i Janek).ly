@@ -27,7 +27,6 @@ melodiaSopranu =
   fis4 e2 |
   cis'2. |
   d2 d4 |
-  \break
   cis2. |
   d4 d2 |
   cis2. |
@@ -46,7 +45,7 @@ melodiaSopranu =
     \new Lyrics \with { alignAboveContext = sopran }
     \lyricsto sopranPierwszy \lyricmode {
       \set fontSize = #-2
-      za -- mie -- szka -- ło mię -- dzy na -- mi.
+      come on earth to dwell a -- mong us.
     }
   >>
   \bar "|."
@@ -113,43 +112,43 @@ akordy = \chordmode {
 %--------------------------------SŁOWA
 
 wzgardzony = \lyricmode {
-  Wzgar -- dzo -- ny o -- kry -- ty chwa -- łą,
-  śmier -- tel -- ny Król nad wie -- ka -- mi!
-  A Sło -- wo Cia -- łem się sta -- ło
-  i mie -- szka -- ło mię -- dzy na -- mi.
-  i mie -- szka -- ło mię -- dzy na -- mi.
+  Low -- ly born, yet wor -- ship gi -- ven,
+  Mor -- tal, yet the King of A -- ges.
+  Now in -- deed the Word made Flesh has
+  come on earth to dwell a -- mong us.
 }
 
 tekstSopranu = \lyricmode {
   \set stanza = "1. "
-  Bóg się ro -- dzi, moc  tru -- chle -- je!
-  O -- gień krze -- pnie, blask cie -- mnie -- je!
-  Wzgar -- dzo -- ny śmier -- tel -- ny
-  A Sło -- wo
-  za -- mie -- szka -- ło mię -- dzy na -- mi.
+  God is born, _ pow -- ers trem -- ble!
+  Fi -- re free -- zes, splen -- dor dark -- ens!
+
+  Dis -- dained and mor -- _ tal
+  Word made Flesh
+  come on earth to dwell a -- mong us.
 }
 tekstAltu = \lyricmode {
   \set stanza = "1. "
-  Bóg się ro -- dzi, ro -- dzi, wszel -- ka moc  tru -- chle -- je,
-  Pan nie -- bio -- sów ob -- na -- żo -- ny!
-  O -- gień krze -- pnie,  krze -- pnie, jas -- ny blask cie -- mnie -- je,
-  ma gra -- ni -- ce Nie -- skoń -- czo -- ny!
+  God is born, _ born, _ pow -- ers trem -- ble, trem -- ble,
+  Lord of Hea -- ven lies for -- sa -- ken!
+  Fi -- re free -- zes, free -- zes, splen -- dor dark -- ens, dark -- ens,
+  The In -- fi -- nite now has bound -- aries!
   \wzgardzony
 }
 tekstTenorow = \lyricmode {
   \set stanza = "1. "
-  Bóg się ro -- dzi, moc  tru -- chle -- je,
-  Pan nie -- bio -- sów ob -- na -- żo -- ny!
-  O -- gień krze -- pnie, blask cie -- mnie -- je,
-  ma gra -- ni -- ce Nie -- skoń -- czo -- ny!
+  God is born, _ pow -- ers trem -- ble,
+  Lord of Hea -- ven lies for -- sa -- ken!
+  Fi -- re free -- zes, splen -- dor dark -- ens,
+  The In -- fi -- nite now has bound -- aries!
   \wzgardzony
 }
 tekstBasow = \lyricmode {
   \set stanza = "1. "
-  Bóg się ro -- dzi, moc  tru -- chle -- je,
-  Pan ob -- na -- żo -- ny!
-  O -- gień krze -- pnie, blask cie -- mnie -- je,
-  ma Nie -- skoń -- czo -- ny!
+  God is born, _ pow -- ers trem -- ble,
+  Hea -- ven for -- sa -- ken!
+  Fi -- re free -- zes, splen -- dor dark -- ens,
+  In -- fi -- nite bound -- aries!
   \wzgardzony
 }
 
