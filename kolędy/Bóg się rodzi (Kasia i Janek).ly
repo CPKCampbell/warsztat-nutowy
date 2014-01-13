@@ -30,7 +30,7 @@ melodiaSopranu =
   \break
   cis2. |
   d4 d2 |
-  cis2. |
+  b8( c b2) |
   d2 a4 |
   <<
     {
@@ -61,10 +61,12 @@ melodiaAltu =
     d8 e fis e e d |
     d4 cis2 |
   }
-  \repeat unfold 3 {
+  \repeat unfold 2 {
     e8( fis g) g fis e |
     fis8( g a) a fis a |
   }
+  g8( e g) g8 fis e |
+  fis8 fis fis4 d8( fis) |
   e8( fis g) g fis e |
   fis8. cis16 e4 d |
   \bar "|."
@@ -101,7 +103,7 @@ melodiaBasow =
   d8 d d4 fis |
   g4. e8 cis a |
   a8 a a4 d |
-  g4. e8 cis a |
+  e4. g8 a g |
   d8 d d4 fis |
   e4. e8 e e |
   a,8. a16 a4 d |
