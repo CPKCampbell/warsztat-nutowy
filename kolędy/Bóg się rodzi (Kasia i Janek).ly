@@ -35,7 +35,7 @@ melodiaSopranu =
   <<
     {
       b4. b8 b b |
-      fis'8. e16 e4 d |
+      cis8. e16 e4 d |
     }
     \new Voice = sopranPierwszy {
       \voiceOne
@@ -66,7 +66,7 @@ melodiaAltu =
     fis8( g a) a fis a |
   }
   e8( fis g) g fis e |
-  fis8. e16 cis4 d |
+  fis8. cis16 e4 d |
   \bar "|."
 }
 
@@ -76,7 +76,7 @@ melodiaTenorow =
   \repeat unfold 2 {
     d8. d'16 d4( cis8) b |
     b8. b16 b4( a8) g |
-    fis8. a16 d8 a g fis |
+    fis8 a d a g fis |
     fis4 e2 |
   }
   \repeat unfold 3 {
@@ -104,7 +104,7 @@ melodiaBasow =
   g4. e8 cis a |
   d8 d d4 fis |
   e4. e8 e e |
-  a,8. a16 cis4 d |
+  a,8. a16 a4 d |
   \bar "|."
 }
 akordy = \chordmode {
