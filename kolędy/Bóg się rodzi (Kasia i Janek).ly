@@ -1,6 +1,13 @@
 \version "2.19.0"
 #(ly:set-option 'strokeadjust #t)
 
+%{
+POMYSŁ:
+dać "wzgardzony" i "śmiertelny" dokładnie tak samo, bez tej różnicy w basach
+którą można przenieść do "a słowo" (i może wtedy uda się tam coś zmienić).
+Można wtedy będzie użyć repetycji żeby był lepszy spacing.
+%}
+
 \header {
   title = "Bóg się rodzi"
   poet = "słowa: Franciszek Karpiński (1741-1825)"
