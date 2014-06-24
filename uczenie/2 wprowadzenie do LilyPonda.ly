@@ -44,12 +44,15 @@
   {\smaller \typewriter lilypond.org/download.html } then
   download and install the setup file for your system.
   You will also need an editor, to create your input files; there are
-  several editors specially adapted to LilyPond,
-  e.g. Frescobaldi – go to
-  \with-url #"http://code.google.com/p/lilykde/downloads/list"
-  \smaller\typewriter"code.google.com/p/lilykde/downloads/list",
-  download the latest version (\italic
-  { Frescobaldi Setup (…).exe}, approximately 15 MB) and install.
+  several editors specially adapted to LilyPond, and examples are shown
+  on the LilyPond website at
+  \with-url #"http://www.lilypond.org/easier-editing.html"
+  \smaller\typewriter"http://www.lilypond.org/easier-editing.html".
+  This guide often refers to Frescobaldi, found at
+  \with-url #"http://www.frescobaldi.org/download"
+  \smaller\typewriter"http://www.frescobaldi.org/download",
+  where you can download the latest stable version for Windows or Linux.
+  There is also a version for OSX in Homebrew and MacPorts.
 }
 
 \markup \vspace #0.1
@@ -65,12 +68,12 @@
   "}"
 }
 \markup \justify \italic {
-  Note that after the letter f there is an apostrophe:
+  Note that after the letter f there is a single quote:
   this is \bold not a back tick, such as the sign from the key next to the digit 1.
 }
 \markup \justify {
   Now, you tell LilyPond to make a score from your input. If you are
-  using Frescobaldi, press Ctrl-M, in the case of
+  using Frescobaldi, press Ctrl-M and in the case of
   Lilybin, press Ctrl-Enter. The result should look like this:
 }
 \relative f' { c c g' g }
@@ -96,7 +99,7 @@
 \markup \wordwrap {
   Pitches are identified by name in LilyPond, and the octave is specified in either absolute or relative mode.
   \vspace #0.1
-  In absolute mode, octaves are specified with apostrophes, for higher octaves or commas for lower octaves,
+  In absolute mode, octaves are specified with single quotes  for higher octaves,  or commas for lower octaves,
   added to the note name. The octaves start from the c in the middle of the bass clef, so that
   \typewriter "{ c c' c''}" gives this output:
 
@@ -107,12 +110,11 @@
 \markup \justify {
   The other way to enter pitches is by using relative mode. This uses the keyword  \typewriter "relative"
   to specify a starting pitch. Following pitches are related to the note immediately preceding, and are placed as close as possible to it,
-  within a fourth below to a fifth above. For example, if after f you write c, you'll get the c which is closest to the f
-  i.e. a fourth lower:
+  within a fourth below to a fourth above. In this example, the f and g are placed within a fourth from the c before them:
 }
 
-\markup \typewriter "\relative c' { f c }"
-\relative c' { f c }
+\markup \typewriter "\relative c' { c f c g }"
+\relative c' { c f c g }
 
 \markup \justify {
   If after f you write a, you'll get an a that is closest to that f
@@ -124,7 +126,7 @@
 
 \markup \justify {
   Add a comma for each octave to lower the pitch,
-  and a single quote for each octave higher octave higher:
+  and a single quote for each octave higher:
 }
 
 
@@ -203,7 +205,7 @@
 \markup \justify {
   LilyPond will automatically \bold show appropriate accidentals, based on the key signature you specify,
   but still needs the accidental pitches spelled correctly.
-  For example, the input could call for a B-Flat in the key of F:
+  For example, the input could call for a b-flat in the key of f:
 }
 \markup  {
   \typewriter "\key f \major \relative c' { r2 bes'2 }"
@@ -214,7 +216,7 @@
   LilyPond will not show the accidental next to this note, so you may think that
   you should type “b” - but there is a flat in the key signature,
   so this pitch is “bes” and that's how it must be typed.  If you
-  type “b”, you'll get b - not what you want:
+  type “b”, you'll get b natural - not what you want:
 }
 \markup {
   \typewriter "\key f \major \relative c' { r2 b'2 }"
@@ -253,7 +255,7 @@
 \markup \justify {
   To create ties, which connect notes of the same pitch,
   use a tilde character \huge ~ after each note that should be tied.
-  }
+}
 \markup \typewriter "\relative f' { a1~ a2~ a8 }"
 \relative f' { a1~ a2~ a8 }
 
@@ -261,7 +263,7 @@
   Slurs, which connect notes of different pitches, use parentheses: a left parenthesis \huge (
   starts the slur, and a right parenthesis \huge ) ends it. Note that the slur begins with the second note:
 }
-  \markup \typewriter "\relative f' { a1 ( b2 c8 ) }"
+\markup \typewriter "\relative f' { a1 ( b2 c8 ) }"
 \relative f' { a1 ( b2 c8 ) }
 
 \markup \justify {
@@ -360,7 +362,7 @@
   Insert two underscores to get a lyric extender:
 }
 \markup \typewriter \column {
- 
+
   \line { "\relative f' { g4 \melisma a b c \melismaEnd }" }
   { "\addlyrics { la __ }" }
 }
@@ -442,7 +444,7 @@
 }
 \markup \typewriter "\\tempo \"Con moto\" 4=110"
 \relative f' {
-  \tempo "Con moto" 4=1
+  \tempo "Con moto" 4=110
 
   c8 d e f g a b c
 }
@@ -468,7 +470,7 @@
   moves the cursor to the corresponding places in the code.
 }
 \markup \justify {
-  Write Each measure in a separate line, as was shown in the
+  Write each measure in a separate line, as was shown in the
   example at the beginning.
 }
 \markup \justify {
@@ -479,18 +481,10 @@
 \markup \justify {
   From time to time (perhaps every measure) compile the score,
   and make sure there are no mistakes.
-  Quite often, an apostrophe or comma gets omitted  -
+  Quite often, a single quote or comma gets omitted  -
   then a fragment of melody is in the wrong octave.
   Sometimes error in the rhythmic values ​​make bar lines appear
   in strange places (or beaming will be completely different
   than what you want) - you'll have to start checking
   from the first note that looks suspicious.
 }
-
-
-
-
-%{
-convert-ly (GNU LilyPond) 2.19.8  convert-ly: Processing `'...
-Applying conversion: 2.17.97, 2.18.0, 2.19.2, 2.19.7
-%}
